@@ -1,3 +1,6 @@
+;write an X86/64 ALP to count numbers of positive and negative numbers from the array
+
+
 ;MACRO
 %macro print 2
 mov rax,1
