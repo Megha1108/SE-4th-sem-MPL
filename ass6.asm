@@ -1,3 +1,6 @@
+;to perform non overlapped block transfer without string specific instruction
+
+
 %macro print 2
 mov rax,1
 mov rdi,1
