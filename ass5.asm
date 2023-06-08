@@ -1,3 +1,5 @@
+;to detect protected mode and display the values of gdtr,ldtr,idtr,tr and msw registers also identify cpu type using cupid instruction.
+
 section .data
 		rmodemsg db 10,'processor is in real mode'
 		rmsg_len:equ $-rmodemsg
