@@ -1,3 +1,5 @@
+;to accept five 64-bit hexadecimal numbers from user and store them in an array and display the accepted numbers.
+
 %macro display 2
 mov rax,01
 mov rdi,01
