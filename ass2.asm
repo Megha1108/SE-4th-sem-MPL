@@ -1,3 +1,6 @@
+;to accept a string and to display its length
+
+
 %macro print 2      ;macro for print
 mov rax,1
 mov rdi,1
