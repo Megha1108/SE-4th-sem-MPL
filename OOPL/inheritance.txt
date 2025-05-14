@@ -1,0 +1,65 @@
+#include<iostream>
+using namespace std;
+// this is our base class
+class stores
+{
+public:
+string title;
+float price;
+//Default constructor
+stores(){
+};
+// parameterized constructor
+stores(string T,float P)
+{
+title=T;
+price=P;
+}
+};
+class book:public stores
+{
+int page_count;
+public:
+book()// constructor
+{
+page_count=0;
+}
+// here we will get data from base class i.e inherit
+book(string T,float P,int total_page):stores(T,P)
+{
+page_count=total_page;
+}
+void display(){
+cout<<"title:"<<title<<endl;
+cout<<"price:"<<price<<endl;
+cout<<"total pages in book " <<page_count<<endl;
+}
+};
+class audio:public stores
+
+{
+float time;
+public:
+audio(){
+time=0.0;
+}
+audio(string T,float P,float min):stores(T,P){
+time=min;
+}
+void display(){
+cout<<"title:"<<title<<endl;
+cout<<"price:"<<price<<endl;
+cout<<"total time in min " <<time<<endl;
+}
+};
+int main(){
+cout<<"\nbook info"<<endl;
+// now it time for object creation
+book x("python",350,300);
+x.display();
+
+cout<<endl<<"audio data"<<endl;
+audio y("harry potter",600,180);
+y.display();
+return 0;
+}

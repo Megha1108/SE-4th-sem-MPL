@@ -1,0 +1,90 @@
+#include <iostream>
+using namespace std;
+
+int n;
+#define size 10
+//int i,j,min,choice;
+
+template<class T>
+
+void set(T A[size])
+{
+    int i,j,min;
+    T temp;
+    for(i=0;i<n;i++)
+    {
+        min=i;
+        for(j=i+1;j<n;j++)
+        {
+            if(A[j]<A[min])
+            min=j;
+        }
+        temp=A[i];
+        A[i]=A[min];
+        A[min]=temp;
+    }
+    cout<<"\nsorted array : ";
+    for (i=0;i<n;i++)
+    {
+        cout<<" "<<A[i];
+    }
+}
+int main()
+{
+    int choice;
+    char C[size];
+    int A[size];
+    float B[size];
+
+    int i;
+
+    cout<<"..................";
+    do 
+    {
+        cout<<"\n 1. integer : ";
+        cout<<"\n 2. float : ";
+        cout<<"\n 3. exit : ";
+        cin>>choice;
+        switch(choice)
+        {
+            case 1:
+                {
+                    cout<<"\nenter total number of integer elements : ";
+                    cin>>n;
+                    cout<<"\nenter integer elements: ";
+                    for(i=0;i<n;i++)
+                    {
+                        cin>>A[i];
+                    }
+                    set(A);
+
+                    break;
+                }
+            case 2:
+                {
+                    cout<<"\nenter total number of float elements : ";
+                    cin>>n;
+                    cout<<"\nenter float elements: ";
+                    for(i=0;i<n;i++)
+                    {
+                        cin>>B[i];
+                    }
+                    set(B);
+
+                    break;
+                }
+            case 3:
+                {
+                    cout<<"program exited successfully";
+                    return(0);
+                }
+            default:
+            {
+                cout<<"\ninvalid";
+            }
+        }
+
+    }
+    while(choice!=4);
+    return 0;
+}
